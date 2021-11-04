@@ -26,6 +26,7 @@
             <input id="color" type="color">
         </p>
         <div>
+            <!-- Alternative way to label an input (less common) -->
             <label>Time begin with
                 <input type="datetime-local" id="timeBegin">
             </label>
@@ -34,8 +35,16 @@
                 <input type="datetime-local">
             </label>
         </div>
+        <!-- This button doesn`t submit the form b/c of the "type" attribute -->
+        <button type="button">Regular button (won`t submit)</button>
+        <!-- This button submit the form -->
+        <button>Submit</button>
+        <!-- So does this one -->
+        <input type="submit" value="Click me to submit!!">
     </form>
 
+    <!-- Outside of a form, no default behavior -->
+    <button>Not inside form</button>
 
 </body>
 
