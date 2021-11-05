@@ -75,9 +75,11 @@
             <label>Small:
                 <input type="radio" name="size" value="xs">
             </label>
+            <br>
             <label>Medium:
                 <input type="radio" name="size" value="s">
             </label>
+            <br>
             <label>Large:
                 <input type="radio" name="size" value="m">
             </label>
@@ -91,6 +93,19 @@
                 <option value="vegetarion">Vegetarion</option>
                 <option value="chicky">Chicky</option>
             </select>
+        </p>
+
+        <p>
+            <label>Amoount of Cheese:
+                <input type="range" min="0" max="100" step=20 value="60" name="cheeseLevel">
+            </label>
+        </p>
+        <label>Any Special Requests:
+            <br>
+            <textarea name="special" cols="60" rows="10" placeholder="Type something here..."></textarea>
+        </label>
+        <p>
+
         </p>
         <button>Submit</button>
     </form>
