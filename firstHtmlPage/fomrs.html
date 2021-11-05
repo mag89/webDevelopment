@@ -100,14 +100,31 @@
                 <input type="range" min="0" max="100" step=20 value="60" name="cheeseLevel">
             </label>
         </p>
-        <label>Any Special Requests:
-            <br>
-            <textarea name="special" cols="60" rows="10" placeholder="Type something here..."></textarea>
-        </label>
         <p>
-
+            <label>Any Special Requests:
+                <br>
+                <textarea name="special" cols="60" rows="10" placeholder="Type something here..."></textarea>
+            </label>
         </p>
         <button>Submit</button>
+    </form>
+
+    <h2>Validations demo</h2>
+    <form action="/dummy">
+        <label for="first">Enter First Name</label>
+    <input type="text" name="first" id="first" placeholder="Type You Name..." required>
+    <div>
+        <label for="userName">Username</label>
+        <input type="text" name="userName" id="userName" placeholder="Type you username..." name="userName" minlength="5" maxlength="10" required>
+    </div>
+    <br>
+    <div>
+        <input type="email" name="email" id="email" placeholder="Type you email..." required>
+    </div>
+    <div>
+        <input type="url" name="url" id="url" placeholder="Type you url..." required>
+    </div>
+    <button>Submit</button>
     </form>
 </body>
 
