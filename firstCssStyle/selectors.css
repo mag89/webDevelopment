@@ -19,6 +19,11 @@ button {
     color: #94d2bd;
 }
 
+#signup:hover {
+background-color: #ee9b00;
+color: #e9d8a6;
+}
+
 h1, h2 {
     color: #005f73;
 }
@@ -35,6 +40,10 @@ span {
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 
@@ -75,7 +84,7 @@ color: red;
 
 
 input + button {
-    background-color: #bb3e03;
+    background-color: #ca6702;
 }
 
 
@@ -90,4 +99,17 @@ input[type="password"] {
 
 a[href*="google"] {
     color: #9b2226;
+}
+
+button:hover {
+    background-color: #ee9b00;
+}
+
+.post button:active {
+    /* background-color: #2a9d8f; */
+    color: #2a9d8f;
+}
+
+.post:nth-of-type(2n) {
+    background-color: #e0d0a2;
 }
