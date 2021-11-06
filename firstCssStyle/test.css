@@ -1,11 +1,21 @@
 h1 {
-    color: teal;
-    background-color: palevioletred;
+    color: #5FCFFC;
 }
-button {
+
+h2 {
     color: magenta;
-    background-color: cyan;
+}
+
+button {
+    color: red;
+    background-color: pink;
 }
 p {
-    color: olive;
+    color: white;
+    background-color: black;
 }
+
+body {
+    background-color: #000;
+}
+
