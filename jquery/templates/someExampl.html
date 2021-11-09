@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Configuure Unload Step</title>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <script>
+        function QuestionnaireViewModel() {
+            var self = this;
+            var currentQuestionIndex = 0;
+
+            //Some dummy model data, probably want to load this from an ajax call
+            var questions = [
+                {
+                    caption: 'How do you like Knockout.js?',
+                    answers: [
+                        { caption: 'It sucks!' },
+                        { caption: 'It rules!' }
+                    ]
+                },
+                {
+                    caption: 'But seriously, it is pretty cool right?',
+                    answers: [
+                        { caption: 'Ok, it is pretty awsome' },
+                        { caption: 'I told you man, it rocks!' }
+                    ]
+                }
+            ];
+
+            //Setup observable properties
+            self.currentQuestion = new ko.observable(questions[0]);
+            self.progress = new ko.observableArray();
+
+            //Add a command
+            self.selectQuestion = function (answer) {
+                self.progress.push({ question: questions[currentQuestionIndex].caption, answer: answer.caption });
+
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    self.currentQuestion(questions[currentQuestionIndex]);
+                }
+                else {
+                    alert('Your done');
+                }
+            };
+        };
+
+        $(document).ready(function () {
+            //Apply bindings
+            ko.applyBindings(new QuestionnaireViewModel());
+        });
+
+    </script>
+
+    <div data-bind="with:currentQuestion">
+        <h1 data-bind="text:caption"></h1>
+        <ul data-bind="foreach:answers">
+            <li data-bind="text:caption, click:$root.selectQuestion"></li>
+        </ul>
+    </div>
+    <div data-bind="foreach:progress">
+        <div>
+            For question
+            <b data-bind="text:question"></b>
+            you selected
+            <b data-bind="text:answer"></b>
+        </div>
+    </div>
+</head>
+
+</html>

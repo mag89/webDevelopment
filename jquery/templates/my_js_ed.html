@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MY_JS_ED</title>
+    <script src="/jqueryMin.js"></script>
+</head>
+
+<script>
+    var stepList = ["UNLOAD", "CREATE_TKT", "CRYPT", "TFS", "CLEAN"];
+
+    var start = () => {
+        var htmlInjection = "";
+        for (i = 0; i < stepList.length; i++) {
+            htmlInjection = htmlInjection + "<p>" + stepList[i] + "</p>"
+        }
+
+        $("#step").html(htmlInjection);
+    }
+
+$(document).ready(x => {
+    start();
+});
+</script>
+
+<body>
+    <div id="step">
+    </div>
+</body>
+
+</html>
