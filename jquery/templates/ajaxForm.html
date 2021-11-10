@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjaxForm</title>
+</head>
+<body>
+    <Form action="" id="myForm">
+        <input type="checkbox" id="oracle" name="oracle" value="oracle">
+        <label for="oracle">Oracle</label>
+        <input type="checkbox" id="greenplum" name="greenplum" value="greenplum">
+        <label for="greenplum">Greenplum</label>
+        <input type="checkbox" id="tfs" name="tfs" value="tfs">
+        <label for="tfs">TFS</label>
+        <button id="btn">Configure!</button>
+        </Form>
+
+        <div class="mess"></div>
+
+        <script type="text/javascript">
+            $('#myForm').submit(function(e) {
+                e.preventDefault();
+                let frm =$(this);
+                let mess = $('#mess');
+                let btn = $('#btn');
+                btn.addClass('progress-bar-strriped progress-bar-animated');
+
+
+                $.ajax({
+                    url: 'someServerApi',
+                    type: 'GET',
+                    data: frm.serialize(),
+                    success: function(){
+                        btn.removeClass('progress-bar-strriped progress-bar-animated');
+                        
+                    }
+                })
+            })
+        </script>
+</body>
+</html>
+
+
+
+
+
